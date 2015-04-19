@@ -94,6 +94,8 @@ elif test -d $cache_dir/node/node_modules; then
 
 fi
 
+read -n1 -rsp $' >>> Before npm install\n'
+
 # Scope config var availability only to `npm install`
 (
   if [ -d "$env_dir" ]; then
@@ -105,6 +107,8 @@ fi
   # Make npm output to STDOUT instead of its default STDERR
   npm install --userconfig $build_dir/.npmrc 2>&1 | indent
 )
+
+read -n1 -rsp $' >>> After npm install\n'
 
 # Persist goodies like node-version in the slug
 mkdir -p $build_dir/.heroku
