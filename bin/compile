@@ -189,7 +189,7 @@ echo $' >>> Before checking grunt\n'
     fi
 
     status "Running grunt heroku:$NODE_ENV task"
-    # $build_dir/node_modules/.bin/grunt heroku:$NODE_ENV
+    $build_dir/node_modules/.bin/grunt heroku:$NODE_ENV
   fi
 )
 
