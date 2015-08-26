@@ -9,6 +9,11 @@ build_dir=$1
 cache_dir=$2
 env_dir=$3
 
+echo "build_dir=$build_dir"
+echo "cache_dir=$cache_dir"
+echo "env_dir=$env_dir"
+
+
 bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
 # Load some convenience functions like status(), echo(), and indent()
